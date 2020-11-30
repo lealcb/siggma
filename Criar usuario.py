@@ -48,6 +48,7 @@ try:
     time.sleep(5)
 except Exception as e:
     print(e)
+    navegador.close()
 verificar_url = navegador.current_url
 if verificar_url == "https://sistema.zettabrasil.com.br/siggma/app/index/workbench":
     bloqueado_base_digitar = navegador.find_element_by_class_name("zt-info")
@@ -96,19 +97,29 @@ except Exception  as E:
 btn_salvar = navegador.find_element_by_id("btnPersistir").click()
 time.sleep(2)
 btn_poup_ok = navegador.find_element_by_id("btnOk").click()
+time.sleep(2)
 
-# el = navegador.find_element_by_xpath("//*[@title='teste485']")
+
 
 
 # Verificações
+try:
+    verf_login = navegador.find_element_by_xpath(f"//td[@title='{login_padrao}']")
+    print(f"Usuario:{login_padrao} ------------ [Pass]")
+    print(f"Senha:{senha_padrao}   ------------ [Pass]")
+except Exception as e:
+    print("Houve um erro para validar o usuario.")
+    print(e)
+    navegador.close()
 
 nome_da_base = navegador.find_element_by_id("zt-empresa").text.split(" ")
 print(f"Você está na base: {nome_da_base[0]}")
-print(f"Nome da Empresa: {nome_da_base[1:4]}")
+print(f"Nome da Empresa:   {nome_da_base[1:4]}")
 
 if nome_da_base[0] == zetta_base:
-    print(f"Você está conforme definiu no inicio. BASE: {zetta_base}")
+    print("TESTE DE BASE --------------------- [Pass]")
 else:
-    print(f"Algo saiu errado. Era pra você estár na base: {zetta_base}")
+    print("TESTE DE BASE --------------------- [Fail]")
 time.sleep(5)
 navegador.close()
+ 
