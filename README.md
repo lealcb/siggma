@@ -1,5 +1,5 @@
 # Siggma
-> Automatizando criação de logins nas novas base.
+> Automatizando criação de logins nas novas base com python e selenium.
 
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
