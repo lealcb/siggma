@@ -18,9 +18,10 @@ choco install selenium-all-drivers
 choco install selenium
 ```
 
-## Usage example
+## Exemplo de uso
 
 Recomendo utilizar quando for criada base nova.
+Digamos foi criada a base e está em um dia corrido, abre o script e ele faz tudo por você
 
 
 
