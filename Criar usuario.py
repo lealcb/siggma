@@ -4,6 +4,8 @@ import time
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+from colorama import init
+from colorama import Fore, Back, Style
 
 url = 'https://sistema.zettabrasil.com.br/siggma'
 zetta_login = str(input("Login: "))
@@ -112,14 +114,17 @@ except Exception as e:
     print(e)
     navegador.close()
 
-nome_da_base = navegador.find_element_by_id("zt-empresa").text.split(" ")
-print(f"Você está na base: {nome_da_base[0]}")
-print(f"Nome da Empresa:   {nome_da_base[1:4]}")
+nome_da_base = navegador.find_element_by_xpath("/html/body/div[2]/div[3]/div[3]/span[2]").text
+numero_da_base= navegador.find_element_by_xpath("/html/body/div[2]/div[3]/div[3]/span[2]/b").text
+print(Fore.GREEN + f"Você está na base: {numero_da_base}")
+print(f"Nome da Empresa:   {nome_da_base}")
 
-if nome_da_base[0] == zetta_base:
-    print("TESTE DE BASE --------------------- [Pass]")
+validar_base = navegador.find_element_by_id("zt-empresa").text.split(" ")
+if validar_base[0] == zetta_base:
+    print("TESTE DE BASE ---------------------" + Fore.GREEN + "[Pass]")
 else:
-    print("TESTE DE BASE --------------------- [Fail]")
+    print("TESTE DE BASE ---------------------" + Fore.RED + "[Fail]")
+time.sleep(5)
 time.sleep(5)
 navegador.close()
  
