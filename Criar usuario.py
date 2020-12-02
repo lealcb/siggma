@@ -52,6 +52,7 @@ except Exception as e:
     print(e)
     navegador.close()
 verificar_url = navegador.current_url
+time.sleep(5)
 if verificar_url == "https://sistema.zettabrasil.com.br/siggma/app/index/workbench":
     bloqueado_base_digitar = navegador.find_element_by_class_name("zt-info")
     bloqueado_base_digitar.click()
