@@ -9,7 +9,10 @@
 
 
 ## Instalção
-
+WebDrivers(Linux):
+Utilizado no script: Firefox
+URL: <a>https://github.com/mozilla/geckodriver/releases</a>
+Extrair para : ```/usr/local/bin```
 
 Windows:
 
@@ -17,6 +20,14 @@ Windows:
 choco install selenium-all-drivers
 choco install selenium
 ```
+
+Python:
+
+```sh
+pip install selenium
+pip install colorama
+```
+
 
 ## Exemplo de uso
 
