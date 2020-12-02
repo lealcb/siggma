@@ -24,24 +24,20 @@ def chamarjanela(codigojanela):
     cmd_comando.send_keys(Keys.ENTER)
 
 
-def nomeusuario(user):
+def login(*args):
+    user , userpwd  = args
     elemento = navegador.find_element_by_id("cpUser")
     elemento.click()
     elemento.clear()
     elemento.send_keys(f"{user}")
-
-
-def senhausuario(userpwd):
     senha_elemento = navegador.find_element_by_id("cpPwd")
     senha_elemento.click()
     senha_elemento.clear()
     senha_elemento.send_keys(f"{userpwd}")
-
 try:
     navegador.get(url)
     time.sleep(1)
-    nomeusuario(zetta_login)
-    senhausuario(zetta_senha)
+    login(zetta_login,zetta_senha)
     botao_elemento = navegador.find_element_by_id('btEnviar')
     botao_elemento.click()
     time.sleep(5)
@@ -65,23 +61,30 @@ try:
         raw_base_digitar = navegador.find_element_by_xpath("/html/body/div[2]/div[3]/div[2]/input").send_keys(zetta_base)
         time.sleep(2)
         raw_base_procurar = navegador.find_element_by_css_selector(f"[data-id='{zetta_base}']").click()
-except:
-    print("Algo deu errado")
+except Exception as e:
+    print(e)
+    print("Algo deu errado ao logar.")
     navegador.close()
+
 # Definir vendedor padrão 
-time.sleep(5)
-chamarjanela(52)
-time.sleep(5)
-btn_pesquisar = navegador.find_element_by_id("btnPesquisar").click()
-time.sleep(2)
-user_id_valid = navegador.find_element_by_xpath(f"//td[@title='1']").click() # Nao esquecer de mudar para 1
-time.sleep(5)
-btn_alterar = navegador.find_element_by_id("btnAlterar").click()
-time.sleep(2)
-vend_padrao = navegador.find_element_by_css_selector("#tabs-1 > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(7) > td:nth-child(2) > span:nth-child(2) > span:nth-child(1) > span:nth-child(1)").click()
-vend_padrao_text = navegador.find_element_by_xpath("//li[text()='VENDEDOR']").click()
-time.sleep(2)
-btn_salvar = navegador.find_element_by_id("btnPersistir").click()
+try:
+    time.sleep(5)
+    chamarjanela(52)
+    time.sleep(5)
+    btn_pesquisar = navegador.find_element_by_id("btnPesquisar").click()
+    time.sleep(2)
+    user_id_valid = navegador.find_element_by_xpath(f"//td[@title='1']").click() # Nao esquecer de mudar para 1
+    time.sleep(5)
+    btn_alterar = navegador.find_element_by_id("btnAlterar").click()
+    time.sleep(2)
+    vend_padrao = navegador.find_element_by_css_selector("#tabs-1 > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(7) > td:nth-child(2) > span:nth-child(2) > span:nth-child(1) > span:nth-child(1)").click()
+    vend_padrao_text = navegador.find_element_by_xpath("//li[text()='VENDEDOR']").click()
+    time.sleep(2)
+    btn_salvar = navegador.find_element_by_id("btnPersistir").click()
+except Exception as e:
+    print(e)
+    print("Algo deu errado ao definir o perfil padrão do colaborador")
+    navegador.close()
 
 # # Verificações
 
@@ -92,14 +95,14 @@ print(Fore.GREEN + f"O codigo de colaborador 1 está definido como perfil {verf_
 
 nome_da_base = navegador.find_element_by_xpath("/html/body/div[2]/div[3]/div[3]/span[2]").text
 numero_da_base= navegador.find_element_by_xpath("/html/body/div[2]/div[3]/div[3]/span[2]/b").text
-print(Fore.GREEN + f"Você está na base: {numero_da_base}")
-print(f"Nome da Empresa:   {nome_da_base}")
+print(Fore.GREEN + f"Você está na base | {numero_da_base} |")
+print(f"Nome da Empresa:|{nome_da_base}|")
 
 validar_base = navegador.find_element_by_id("zt-empresa").text.split(" ")
 if validar_base[0] == zetta_base:
-    print("TESTE DE BASE ---------------------" + Fore.GREEN + "[Pass]")
+    print("TESTE DE BASE ---------------------" + Fore.GREEN + "|Pass|")
 else:
-    print("TESTE DE BASE ---------------------" + Fore.RED + "[Fail]")
+    print("TESTE DE BASE ---------------------" + Fore.RED + "|Fail|")
 time.sleep(5)
 
 navegador.close()
