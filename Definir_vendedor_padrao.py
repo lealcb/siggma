@@ -49,22 +49,25 @@ except Exception as e:
     print(e)
     navegador.close()
 verificar_url = navegador.current_url
-if verificar_url == "https://sistema.zettabrasil.com.br/siggma/app/index/workbench":
-    bloqueado_base_digitar = navegador.find_element_by_class_name("zt-info")
-    bloqueado_base_digitar.click()
-    bloqueado_digitar_base = navegador.find_element_by_xpath("/html/body/section[2]/div[1]/div[1]/div[2]/input")
-    bloqueado_digitar_base.send_keys(zetta_base)
-    time.sleep(2)
-    clicar_na_base = navegador.find_element_by_css_selector(f"[data-id='{zetta_base}']").click()
-    time.sleep(3)
-    comercialModulo = navegador.find_element_by_css_selector(f"[data-id='3']").click()
-    time.sleep(2)
-else:
-    raw_base_clicar = navegador.find_element_by_id("zt-empresa").click()
-    raw_base_digitar = navegador.find_element_by_xpath("/html/body/div[2]/div[3]/div[2]/input").send_keys(zetta_base)
-    time.sleep(2)
-    raw_base_procurar = navegador.find_element_by_css_selector(f"[data-id='{zetta_base}']").click()
-
+try:
+    if verificar_url == "https://sistema.zettabrasil.com.br/siggma/app/index/workbench":
+        bloqueado_base_digitar = navegador.find_element_by_class_name("zt-info")
+        bloqueado_base_digitar.click()
+        bloqueado_digitar_base = navegador.find_element_by_xpath("/html/body/section[2]/div[1]/div[1]/div[2]/input")
+        bloqueado_digitar_base.send_keys(zetta_base)
+        time.sleep(2)
+        clicar_na_base = navegador.find_element_by_css_selector(f"[data-id='{zetta_base}']").click()
+        time.sleep(3)
+        comercialModulo = navegador.find_element_by_css_selector(f"[data-id='3']").click()
+        time.sleep(2)
+    else:
+        raw_base_clicar = navegador.find_element_by_id("zt-empresa").click()
+        raw_base_digitar = navegador.find_element_by_xpath("/html/body/div[2]/div[3]/div[2]/input").send_keys(zetta_base)
+        time.sleep(2)
+        raw_base_procurar = navegador.find_element_by_css_selector(f"[data-id='{zetta_base}']").click()
+except:
+    print("Algo deu errado")
+    navegador.close()
 # Definir vendedor padrão 
 time.sleep(5)
 chamarjanela(52)
