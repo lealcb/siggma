@@ -24,6 +24,7 @@ choco install selenium
 Python:
 
 ```sh
+pip install psycopg2
 pip install selenium
 pip install colorama
 ```
