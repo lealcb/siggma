@@ -96,3 +96,5 @@ elif resposta == 2:
     time.sleep(10)
     os.chdir(f"C:/ZettaBrasil/{pasta}")
     os.startfile("AtualizadorBDZettaNFCe.exe")
+else:
+    print ("Comando inválido")
