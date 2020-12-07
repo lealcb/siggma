@@ -35,12 +35,12 @@ pip install selenium
 
 
 ## Utilização:
--> Baixar o arquivo siggma.py e main_siggma.py
--> Baixar o Geecko WebDriver(Firefox). Caso utilize outro mudar na  siggma.py função entrar linha 16
--> Iniciar o terminal com python -i main_siggma.py 
--> Com o terminal aberto para cadastrar usuario chamar .novousuario("nome do usuario")
-...
--> para fechar utilize .fechar_navegador()
+<p>-> Baixar a pasta automação web do repositorio</p>
+<p>-> Baixar o Geecko WebDriver(Firefox). Caso utilize outro mudar na  siggma.py função entrar linha 16</p>
+<p>-> Iniciar o terminal com python -i main_siggma.py </p>
+<p>-> Com o terminal aberto para cadastrar usuario chamar .novousuario("nome do usuario")</p>
+<p>...
+<p>-> para fechar utilize .fechar_navegador()</p>
 
 
 
