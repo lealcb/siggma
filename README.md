@@ -24,16 +24,32 @@ choco install selenium
 Python:
 
 ```sh
-pip install psycopg2
+pip install psycopg2  # Para o postgre_siggma
 pip install selenium
-pip install colorama
 ```
 
 
-## Exemplo de uso
+## Utilização:
+-> Baixar o arquivo siggma.py e main_siggma.py
+-> Baixar o Geecko WebDriver(Firefox). Caso utilize outro mudar na  siggma.py função entrar linha 16
+-> Iniciar o terminal com python -i main_siggma.py 
+-> Com o terminal aberto para cadastrar usuario chamar .novousuario("nome do usuario")
+...
+-> para fechar utilize .fechar_navegador()
 
-Recomendo utilizar quando for criada base nova.
-Digamos foi criada a base e está em um dia corrido, abre o script e ele faz tudo por você
+
+
+
+## Em Andamento
+
+Chamar tela no modo interativo
+Definir usuario padrão
+Criar tabela contabil padrão 
+Criar plano de contas padrão generico
+Teste de emissão NF-e
+Teste servidor sefaz
+Teste consultar busca de XML
+Validador de informação.
 
 
 
