@@ -1,15 +1,12 @@
 # Siggma
-> Automatizando criação de logins nas novas base com python e selenium.
-> Automatizando definição de perfil como vendedor em base nova
-> Automatizando criação de bases novas para o PDV no postgreSQL
+> Automatizando criação de logins nas novas base com python e selenium. --- Automatizador WEB
+
+> Automatizando criação de bases novas para o PDV no postgreSQL --- Automatizando banco de dados
 
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 
-1º Script É so colocar o codigo da base(junto do usuario e senha) que o mesmo já cadastrar um novo login.
-2º Script é só definir a base que ele vai automaticamente definir o id colaborador 1 como perfil vendeedor
-3º Script/EXE é so seguir as instruçoes do terminal que o mesmo irá criar o banco de dados novo. Utilizar o EXE quando for o windows. 
 
 
 
@@ -47,14 +44,14 @@ pip install selenium
 
 ## Em Andamento
 
-Chamar tela no modo interativo
-Definir usuario padrão
-Criar tabela contabil padrão 
-Criar plano de contas padrão generico
-Teste de emissão NF-e
-Teste servidor sefaz
-Teste consultar busca de XML
-Validador de informação.
+<p>Chamar tela no modo interativo</p>
+<p>Definir usuario padrão</p>
+<p>Criar tabela contabil padrão</p> 
+<p>Criar plano de contas padrão generico</p>
+<p>Teste de emissão NF-e</p>
+<p>Teste servidor sefaz</p>
+<p>Teste consultar busca de XML</p>
+<p>Validador de informação.</p>
 
 
 
