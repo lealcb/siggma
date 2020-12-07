@@ -19,6 +19,7 @@ Extrair para : ```/usr/local/bin```
 Windows:
 Extrair o arquivo banco_de_dados.rar e executar. Ele já contém todos os dados necessarios para rodar. 
 ```sh
+https://chocolatey.org/install
 choco install selenium-all-drivers
 choco install selenium
 ```
